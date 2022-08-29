@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react'
 import "./addPopUP.css"
 import {IoClose } from "react-icons/io5";
 import DataContext from '../../context';
+import {addInArray} from '../../utils/functions';
 
 const Index = ({setPopUP}:any) => {
-    const {create,tempDataList,setTempDataList,dataList} = useContext(DataContext);
+    const {create,setInputPopUP,tempDataList,setTempDataList,dataList,folderPath,setDataList} = useContext(DataContext);
 
   const [name, setName] = useState("");
 
@@ -19,17 +20,7 @@ const Index = ({setPopUP}:any) => {
         return false
     }
   }
-  
-  const filterOut = (data:any ,name:string) =>{
-    const filteredData = data.findIndex((elem:any )=>{
-        return  elem.name.toLowerCase() !== name.toLowerCase() &&
-                elem.type === "folder"
-    })
-    console.log(data);
-    console.log(filteredData);
-    
-    return filteredData
-  }
+
     const handleSubmit = (e:any) =>{
         e.preventDefault();
         if(ifExist(tempDataList)){
@@ -44,15 +35,10 @@ const Index = ({setPopUP}:any) => {
                 newData['files'] = []
             }
             setTempDataList([...tempDataList,newData])
-            const newDataList = dataList
-            // console.log(newDataList);
-            let array = []
-            const data = newDataList.map((elem:any)=>{
-                console.log(newDataList);
-                
-            })
-            // console.log(data);
-            filterOut(newDataList,'Folder');
+            const newPath = folderPath.map((elm:any)=>elm.i)
+            addInArray(dataList, newPath ,newData)
+            setDataList(dataList)
+            setInputPopUP(false)
         }
     }
   return (

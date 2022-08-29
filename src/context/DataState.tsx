@@ -9,6 +9,7 @@ const DataState = ({children} : { children : ReactNode}) => {
   const [inputPopUP, setInputPopUP] = useState(false)
   const [create, setCreate] = useState("")
   const [folderPath, setFolderPath] = useState([])
+  const [target, setTarget] = useState({})
 
 
   return (
@@ -25,6 +26,8 @@ const DataState = ({children} : { children : ReactNode}) => {
         setCreate,
         folderPath,
         setFolderPath,
+        setTarget,
+        target
       }}
     >
 

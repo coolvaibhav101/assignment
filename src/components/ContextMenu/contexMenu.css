@@ -1,0 +1,17 @@
+.ContexMenu{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 4px;
+    background-color: #808080de;
+}
+.ContexMenu .option{
+    padding: .5rem 1rem;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 100ms ease;
+}
+.ContexMenu .option:hover{
+    background-color: #000000c2;
+}

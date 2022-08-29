@@ -11,7 +11,7 @@ export const preData = [
           {
             name : "Again InnerFolder",
             type : "folder",
-            files : [ ]
+            files : [  ]
           },
           {
             name : "Again Inner Document",
@@ -30,25 +30,25 @@ export const preData = [
     type : "folder",
     files : [ 
       {
-        name : "Folder",
+        name : "InnerFolder",
         type : "folder",
-        files : [ ]
+        files : [ 
+          {
+            name : "Again InnerFolder",
+            type : "folder",
+            files : [  ]
+          },
+          {
+            name : "Again Inner Document",
+            type : "file"
+          },
+        ]
       },
       {
-        name : "Folder2",
-        type : "folder",
-        files : [ ]
-      },
-      {
-        name : "Document",
+        name : "Inner Document",
         type : "file"
       },
-    
-      {
-        name : "Document2",
-        type : "file",
-      },
-     ]
+    ]
   },
   {
     name : "Document",

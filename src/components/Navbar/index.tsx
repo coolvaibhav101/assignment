@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { IoMdArrowBack } from 'react-icons/io';
 import "./header.css"
 import DataContext from '../../context';
-
 const Index = () => {
 
   const {setInputPopUP,setCreate,folderPath,dataList,setTempDataList,setFolderPath} = useContext(DataContext);
@@ -25,25 +24,12 @@ const Index = () => {
       folderPath.map((elm:any)=>{
         const newArray =ifExist(forNewArray,elm.name)
         forNewArray = newArray.files
+        return forNewArray
       })
       setTempDataList(forNewArray)
       setFolderPath(folderPath)
     }
 
-    const add = () =>{
-      // console.log(dataList);
-      // console.log(folderPath);
-      folderPath.map((elem:any)=>{
-            // newArray.push({
-          //     name : "null Document",
-          //     type : "file"
-          // })
-          console.log(dataList[elem.i]);
-        return dataList[elem.i]
-      })
-      let newArray = dataList
-      console.log(newArray);
-    }
     return(
     <header>
         <div className="buttons lock" onClick={()=>onBack()}><IoMdArrowBack/></div>
@@ -51,9 +37,6 @@ const Index = () => {
         <div className="new" onClick={()=>createNew("file")  }>New File</div>
         <div className="new" onClick={()=>createNew("folder")}>New Folder</div>
         </div>
-        <button onClick={()=>add()} >
-          ok
-        </button>
     </header>
     )}
 
