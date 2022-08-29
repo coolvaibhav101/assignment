@@ -1,6 +1,6 @@
-export const addInArray = (array:any,path:any,elemForAdd:any) =>{
+export const addInArray = (array:any,path:number[],elemForAdd:any) =>{
 
-    const oneNested:any = (array:any,path:any,elemForAdd:any) => (path.slice(1)[0] === undefined) ? array[path[0]].files.push(elemForAdd) : oneNested(array[path[0]].files,path.slice(1),elemForAdd)
+    const oneNested:any = (array:any,path:number[],elemForAdd:any) => path.slice(1)[0] === undefined ? array[path[0]].files.push(elemForAdd) : oneNested(array[path[0]].files,path.slice(1),elemForAdd)
 
     // If Its Starting Folder else Nested Folder
     path[0] === undefined ? array.push(elemForAdd) : oneNested(array,path,elemForAdd)
@@ -8,9 +8,9 @@ export const addInArray = (array:any,path:any,elemForAdd:any) =>{
     return array
 }
 
-export const removeInArray = (array:any,path:any,index:number) =>{
+export const removeInArray = (array:any,path:number[],index:number) =>{
 
-    const oneNested:any = (array:any,path:any,index:any) =>path.slice(1)[0] === undefined ? array[path[0]].files.splice(index, 1) : oneNested(array[path[0]].files,path.slice(1),index)
+    const oneNested:any = (array:any,path:number[],index:number) =>path.slice(1)[0] === undefined ? array[path[0]].files.splice(index, 1) : oneNested(array[path[0]].files,path.slice(1),index)
         
     // If Its Starting Folder else Nested Folder
     path[0] === undefined ? array.splice(index, 1) :  oneNested(array,path,index)
