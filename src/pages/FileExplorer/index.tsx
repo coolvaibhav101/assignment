@@ -18,7 +18,7 @@ const Index = () => {
     // eslint-disable-next-line
   }, []);
 
-  tempDataList.sort((a:any, b:any) => a.type < b.type ? 1 : -1)
+  tempDataList.sort((a:any, b:any) => a.type < b.type ? 1 : 1)
   
   return (
     <div className='FileExplorer' >
