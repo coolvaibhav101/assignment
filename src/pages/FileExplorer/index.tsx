@@ -16,6 +16,7 @@ const Index = () => {
     return () => {
       window.removeEventListener('click', handleClick)
     }
+    // eslint-disable-next-line
   }, []);
   
   return (
