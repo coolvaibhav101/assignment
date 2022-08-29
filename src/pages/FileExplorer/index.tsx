@@ -12,12 +12,13 @@ const Index = () => {
   useEffect(() => {
     const handleClick = () => setShow(false)
     window.addEventListener('click', handleClick)
-    tempDataList.sort((a:any, b:any) => a.type < b.type ? 1 : -1)
     return () => {
       window.removeEventListener('click', handleClick)
     }
     // eslint-disable-next-line
   }, []);
+  
+  // tempDataList.sort((a:any, b:any) => a.type < b.type ? 1 : -1)
   
   return (
     <div className='FileExplorer' >
