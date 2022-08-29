@@ -32,7 +32,7 @@ const Index = () => {
 
     return(
     <header>
-        <div className="buttons lock" onClick={()=>onBack()}><IoMdArrowBack/></div>
+        <div className={folderPath[0]===undefined?"buttons lock":"buttons"} onClick={()=>onBack()}><IoMdArrowBack/></div>
         <div className="newBox">
         <div className="new" onClick={()=>createNew("file")  }>New File</div>
         <div className="new" onClick={()=>createNew("folder")}>New Folder</div>

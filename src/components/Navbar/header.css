@@ -20,6 +20,10 @@ header .buttons{
     background-color: white;
     color: black;
     cursor: pointer;
+    transition: 200ms ease;
+}
+header .buttons:hover{
+    background-color: #dbdbdb;
 }
 header .buttons.lock{
     color: #7e7e7e;
