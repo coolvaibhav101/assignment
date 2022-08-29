@@ -4,6 +4,7 @@
     left: 0px;
     border-radius: 4px;
     background-color: #808080de;
+    user-select: none;
 }
 .ContexMenu .option{
     padding: .5rem 1rem;
