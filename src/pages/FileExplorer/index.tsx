@@ -7,12 +7,12 @@ import DataContext from '../../context';
 const Index = () => {
 
   const {tempDataList} = useContext(DataContext);
-    tempDataList.sort((a:any, b:any) => a.type < b.type ? 1 : -1)
   const [show, setShow] = useState(false)
   const [points, setPoints] = useState({x:0, y:0})
   useEffect(() => {
     const handleClick = () => setShow(false)
     window.addEventListener('click', handleClick)
+    tempDataList.sort((a:any, b:any) => a.type < b.type ? 1 : -1)
     return () => {
       window.removeEventListener('click', handleClick)
     }
